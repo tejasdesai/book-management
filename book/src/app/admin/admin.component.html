@@ -1,0 +1,152 @@
+<div class="fadeMe" *ngIf="!cookieService.get('admin')">
+	<p class="loginoverlay"> Please <a routerLink="/login" routerLinkActive="active">login</a> to access administration panel. </p> 
+</div>
+<div id="admin-container">
+	<app-admin-sidebar></app-admin-sidebar>
+  	
+  	<!-- <div class="admin-index "> -->
+  	<section class="site-content site-section">
+        <div class="container">
+            <div class="row">
+                <div class="site-block">
+				  	<div class="col-sm-6 col-lg-3">
+			  			<a class="widget widget-hover-effect1">
+						   	<div class="widget-simple">
+		                        <div class="widget-icon pull-left themed-background-spring animation-fadeIn">
+		                            <i class="fa fa-dollar"></i>
+		                        </div>
+		                        <h3 class="widget-content text-right animation-pullDown">
+		                            + <strong>${{totalsaleamount}}</strong><br>
+		                            <small>Total Sales</small>
+		                        </h3>
+		                    </div>
+		                </a>
+				  	</div>
+				  	<div class="col-sm-6 col-lg-3">
+			  			<a class="widget widget-hover-effect1">
+						   	<div class="widget-simple">
+		                        <div class="widget-icon pull-left themed-background-spring animation-fadeIn">
+		                            <i class="fa fa-dollar"></i>
+		                        </div>
+		                        <h3 class="widget-content text-right animation-pullDown">
+		                            + <strong>${{yearlysalesamount}}</strong><br>
+		                            <small>Sales This Year</small>
+		                        </h3>
+		                    </div>
+		                </a>
+				  	</div>
+				  	<div class="col-sm-6 col-lg-3">
+			  			<a class="widget widget-hover-effect1">
+						   	<div class="widget-simple">
+		                        <div class="widget-icon pull-left themed-background-spring animation-fadeIn">
+		                            <i class="fa fa-dollar"></i>
+		                        </div>
+		                        <h3 class="widget-content text-right animation-pullDown">
+		                            + <strong>${{monthlysalesamount}}</strong><br>
+		                            <small>Sales This Month</small>
+		                        </h3>
+		                    </div>
+		                </a>
+				  	</div>
+				  	<div class="col-sm-6 col-lg-3">
+			  			<a class="widget widget-hover-effect1">
+						   	<div class="widget-simple">
+		                        <div class="widget-icon pull-left themed-background-spring animation-fadeIn">
+		                            <i class="fa fa-dollar"></i>
+		                        </div>
+		                        <h3 class="widget-content text-right animation-pullDown">
+		                            + <strong>${{weeklysalesamount}}</strong><br>
+		                            <small>Sales This Week</small>
+		                        </h3>
+		                    </div>
+		                </a>
+				  	</div>
+				  	<div class="col-sm-6 col-lg-3">
+			  			<a class="widget widget-hover-effect1">
+						   	<div class="widget-simple">
+		                        <div class="widget-icon pull-left themed-background-spring animation-fadeIn">
+		                            <i class="fa fa-dollar"></i>
+		                        </div>
+		                        <h3 class="widget-content text-right animation-pullDown">
+		                            + <strong>${{todaysalesamount}}</strong><br>
+		                            <small>Sales Today</small>
+		                        </h3>
+		                    </div>
+		                </a>
+				  	</div>
+				  	<div class="col-sm-6 col-lg-3">
+			  			<a class="widget widget-hover-effect1">
+						   	<div class="widget-simple">
+		                        <div class="widget-icon pull-left themed-background-coral animation-fadeIn">
+		                            <i class="fa fa-user"></i>
+		                        </div>
+		                        <h3 class="widget-content text-right animation-pullDown">
+		                            # <strong>{{customers}}</strong><br>
+		                            <small>Customers</small>
+		                        </h3>
+		                    </div>
+		                </a>
+				  	</div>
+				  	<div class="col-sm-6 col-lg-3">
+			  			<a class="widget widget-hover-effect1">
+						   	<div class="widget-simple">
+		                        <div class="widget-icon pull-left themed-background-coral animation-fadeIn">
+		                            <i class="fa fa-user"></i>
+		                        </div>
+		                        <h3 class="widget-content text-right animation-pullDown">
+		                            # <strong>{{admins}}</strong><br>
+		                            <small>Admins</small>
+		                        </h3>
+		                    </div>
+		                </a>
+				  	</div>
+				  	<div class="col-sm-6 col-lg-3">
+			  			<a class="widget widget-hover-effect1">
+						   	<div class="widget-simple">
+		                        <div class="widget-icon pull-left themed-background-fancy animation-fadeIn">
+		                            <i class="fa fa-book"></i>
+		                        </div>
+		                        <h3 class="widget-content text-right animation-pullDown">
+		                            # <strong>{{books}}</strong><br>
+		                            <small>Total Books</small>
+		                        </h3>
+		                    </div>
+		                </a>
+				  	</div>
+				  	<div class="col-sm-6 col-lg-3">
+			  			<a class="widget widget-hover-effect1">
+						   	<div class="widget-simple">
+		                        <div class="widget-icon pull-left themed-background-fancy animation-fadeIn">
+		                            <i class="fa fa-book"></i>
+		                        </div>
+		                        <h3 class="widget-content text-right animation-pullDown">
+		                            # <strong>{{donatedbooks}}</strong><br>
+		                            <small>Donated Books</small>
+		                        </h3>
+		                    </div>
+		                </a>
+				  	</div>
+				  	<div class="col-sm-6 col-lg-3">
+			  			<a class="widget widget-hover-effect1">
+						   	<div class="widget-simple">
+		                        <div class="widget-icon pull-left themed-background-fancy animation-fadeIn">
+		                            <i class="fa fa-book"></i>
+		                        </div>
+		                        <h3 class="widget-content text-right animation-pullDown">
+		                            # <strong>{{requestedbooks}}</strong><br>
+		                            <small>Requested Books</small>
+		                        </h3>
+		                    </div>
+		                </a>
+				  	</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- </div> -->
+   	
+   	<div id="content">
+    	<router-outlet></router-outlet>
+  	</div>
+</div>
+

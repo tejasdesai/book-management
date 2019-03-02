@@ -1,0 +1,51 @@
+<div id="request-book-container">
+  	<div id="page-container" ng-app="regApp" ng-controller="regCtrl">
+	    <section class="site-content site-section">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4 site-block">
+	                    <!-- Sign Up Form -->
+	                    <form method="post" id="form-request" class="form-horizontal" name="form" (ngSubmit)="onSubmit(f)" #f="ngForm" enctype="multipart/form-data" novalidate>
+	                    	<div class="form-group">
+	                            <div class="col-xs-12">
+	                           		<h2 style="text-align: center;"> <small> Request a book </small></h2>
+	                           	</div>
+							</div>
+	                    	<div class="form-group">
+		                        <div class="col-xs-12">
+		                            <div class="input-group">
+		                                <label for="loginemail">Enter your email address</label>
+		                                <input type="email" id="loginemail" name="email" class="form-control input-lg" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
+		                                <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+				                        	<div *ngIf="email.errors.required">Email is required</div>
+				                        	<div *ngIf="email.errors.email">Email must be a valid email address</div>	
+				                        </div>
+		                            </div>
+	                        	</div>
+		                    </div>
+	                        <div class="form-group">
+	                            <div class="col-xs-12">
+	                                <div class="input-group">
+	                                    <label for="title">Title of the book</label>
+	                                    <input type="text" id="add-title" name="title" class="form-control input-lg" [(ngModel)]="model.title" #title="ngModel" [ngClass]="{ 'is-invalid': f.submitted && title.invalid }" required />
+	                                    <div *ngIf="f.submitted && title.invalid" class="invalid-feedback">
+	                                        <div *ngIf="title.errors.required">Title is required</div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="form-group form-actions">
+	                            <div class="col-xs-6 text-right reg-btn">
+	                                <button type="submit" class="btn btn-sm btn-primary reg-btn"><i class="fa fa-plus"></i> Request a book</button>
+	                            </div>
+	                            <div class="col-xs-6 text-left">
+	                                <button type="reset" id="reset-btn" style="display: none" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Reset</button>
+	                            </div>
+	                        </div>
+	                    </form>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	</div>	
+</div>

@@ -1,0 +1,30 @@
+<div class="top_bar">
+	<div class="container">
+		<div class="row">
+			<div class="col d-flex flex-row">
+				<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="assets/images/phone.png" alt=""></div>+1-660-238-2283</div>
+				<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="assets/images/mail.png" alt=""></div><a href="mailto:turnthepage.care@gmail.com">turnthepage.care@gmail.com</a></div>
+				<div class="top_bar_content ml-auto">
+					<div class="top_bar_user">
+						<div *ngIf="!cookieService.check('mysite_username') && !isAdmin" class="user_icon"><img src="assets/images/user.svg" alt=""></div>
+						<div *ngIf="!cookieService.check('mysite_username') && !isAdmin"><a routerLink="/register" routerLinkActive="active">Register</a></div>
+						
+						<div *ngIf="!cookieService.check('mysite_username')  && !isAdmin"><a routerLink="/login" routerLinkActive="active" style="margin-right:21px;">Sign in</a></div>
+						
+						<div *ngIf="cookieService.check('mysite_username')" style="margin-right:21px;"><a>Hello {{cookieService.get('mysite_username')}}</a></div>
+						<!-- <div *ngIf="cookieService.check('mysite_username')" (click)="onLogout()" style="cursor: pointer"><a>Sign out</a></div> -->
+						<div class="cart_icon" *ngIf="!isAdmin">
+							<a routerLink="/shopping-cart" routerLinkActive="active">
+								<img src="assets/images/cart.png" title="Shopping Cart" height="20px" width="20px">
+							</a>
+							<span class='badge badge-warning' id='lblCartCount'> {{count}} </span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div id="content">
+    	<router-outlet></router-outlet>
+  	</div>
+</div>

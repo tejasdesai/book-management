@@ -1,0 +1,53 @@
+<div id="contact-container">
+	<app-admin-sidebar></app-admin-sidebar>
+	<div id="nomessage-container1" *ngIf="messages.length == 0">
+	    <section class="site-content site-section">
+	        <div class="container">
+	        	<div class="col-sm-6 col-sm-offset-3 col-lg-8 site-block">
+	        		<div><h2>Messages</h2></div>
+	        		<div><h4> No Messages available.</h4></div>
+	        	</div>
+	        </div>
+	    </section>
+	</div>
+	<div id="nomessage-container2" style="display:none">
+	    <section class="site-content site-section">
+	        <div class="container">
+	        	<div class="col-sm-6 col-sm-offset-3 col-lg-8 site-block">
+	        		<div><h2>Messages</h2></div>
+	        		<div><h4> No Messages available.</h4></div>
+	        	</div>
+	        </div>
+	    </section>
+	</div>
+  	<div id="message-container" *ngIf="messages.length > 0">
+	    <section class="site-content site-section">
+	        <div class="container">
+	        	<div class="col-sm-6 col-sm-offset-3 col-lg-8 site-block">
+		        	<h2>Messages</h2>
+					<table class="table table-bordered table-hover">
+						<thead>
+						  <tr>
+						    <th>Name</th>
+						    <th>Email</th>
+						    <th>Contact</th>
+						    <th>Message</th>
+						    <th>Delete</th>
+						  </tr>
+						</thead>
+						<tbody id="messages-table-body">
+						  <tr *ngFor="let x of messages" id="tr_{{x.contact_id}}">
+						    <td>{{x.contact_name}}</td>
+						    <td>{{x.contact_email}}</td>
+						    <td *ngIf="x.contact_phone != ''">{{x.contact_phone}}</td>
+						    <td *ngIf="x.contact_phone == ''"> - </td>
+						    <td>{{x.contact_message}}</td>
+						    <td class="deleteicon"><i class="fa fa-trash" (click)="delete(event, x.contact_id)"></i></td>
+						  </tr>
+						</tbody>
+					</table>
+				</div>
+	        </div>
+	    </section>
+	</div>
+</div>

@@ -1,0 +1,134 @@
+<div id="edit-book-container"  *ngIf="dataLoaded">
+	<app-admin-sidebar></app-admin-sidebar>
+  	<div id="page-container">
+	    <section class="site-content site-section">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4 site-block">
+	                	<form method="post" id="form-sign-up" class="form-horizontal" name="form" (ngSubmit)="onSubmit(f)" #f="ngForm" enctype="multipart/form-data" novalidate>
+	                    	<div class="form-group">
+		                    	<div class="col-xs-12">
+		                    		<div class="input-group">
+		                    			<label for="category">Category</label>
+		                    			<select placeholder="Category" name="category" class="form-control input-lg" [(ngModel)]="model.category" #category="ngModel" [ngClass]="{ 'is-invalid': f.submitted && category.invalid }" required>
+									     	<option *ngFor="let x of categories" value={{x}}>{{x}}</option>
+									    </select>
+									    <div *ngIf="f.submitted && category.invalid" class="invalid-feedback">
+									      	<div *ngIf="category.errors.required">Select a category</div>
+									    </div>
+		                    		</div>
+		                    	</div>
+		                    </div>
+	                    	<div class="form-group">
+	                            <div class="col-xs-12">
+	                                <div class="input-group">
+	                                    <label for="copies">Available Copies</label>
+	                                    <input type="text" id="add-copies" name="copies" class="form-control input-lg" [(ngModel)]="model.copies" #copies="ngModel" [ngClass]="{ 'is-invalid': f.submitted && copies.invalid }" pattern="^[0-9]*$" required />
+	                                    <div *ngIf="f.submitted && copies.invalid" class="invalid-feedback">
+	                                        <div *ngIf="copies.errors.required">Number of copies are required</div>
+	                                        <div *ngIf="copies.errors.pattern">Please enter a number</div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="form-group">
+	                            <div class="col-xs-12">
+	                                <div class="input-group">
+	                                    <label for="isbn">ISBN</label>
+	                                    <input type="text" id="add-isbn" name="isbn" class="form-control input-lg" [(ngModel)]="model.isbn" #isbn="ngModel" pattern="^\d{9}[\d|X]$" />
+	                                    <div *ngIf="f.submitted && isbn.invalid" class="invalid-feedback">
+	                                        <div *ngIf="isbn.errors.pattern">Please enter valid ISBN</div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="form-group">
+	                            <div class="col-xs-12">
+	                                <div class="input-group">
+	                                    <label for="author">Author</label>
+	                                    <input type="text" id="add-author" name="author" class="form-control input-lg" [(ngModel)]="model.author" #author="ngModel" [ngClass]="{ 'is-invalid': f.submitted && author.invalid }" required />
+	                                    <div *ngIf="f.submitted && author.invalid" class="invalid-feedback">
+	                                        <div *ngIf="author.errors.required">Author is required</div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="form-group">
+	                            <div class="col-xs-12">
+	                                <div class="input-group">
+	                                    <label for="publisher">Publisher</label>
+	                                    <input type="text" id="add-publisher" name="publisher" class="form-control input-lg" [(ngModel)]="model.publisher" #publisher="ngModel" />
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="form-group">
+	                            <div class="col-xs-12">
+	                                <div class="input-group">
+	                                    <label for="title">Title</label>
+	                                    <input type="text" id="add-title" name="title" class="form-control input-lg" [(ngModel)]="model.title" #title="ngModel" [ngClass]="{ 'is-invalid': f.submitted && title.invalid }" required />
+	                                    <div *ngIf="f.submitted && title.invalid" class="invalid-feedback">
+	                                        <div *ngIf="title.errors.required">Title is required</div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="form-group">
+	                            <div class="col-xs-12">
+	                                <div class="input-group">
+	                                    <label for="cost">Cost($)</label>
+	                                    <input type="text" id="add-cost" name="cost" class="form-control input-lg" [(ngModel)]="model.cost" #cost="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cost.invalid }" pattern="^[0-9]*$" required />
+	                                    <div *ngIf="f.submitted && cost.invalid" class="invalid-feedback">
+	                                        <div *ngIf="cost.errors.required">Please enter a cost</div>
+	                                        <div *ngIf="cost.errors.pattern">Invalid cost. Please enter a number</div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="form-group">
+	                            <div class="col-xs-12">
+	                                <div class="input-group">
+	                                    <label for="subject">Subject</label>
+	                                    <input type="text" id="add-subject" name="subject" class="form-control input-lg" [(ngModel)]="model.subject" #subject="ngModel" />
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <!-- <div class="form-group">
+	                            <div class="col-xs-12">
+	                                <div class="input-group">
+	                                    <label for="cimage">Cover Image</label>
+	                                    <input type="file" id="add-cimage" name="cimage" class="form-control input-lg" [(ngModel)]="model.cimage" #cimage="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cimage.invalid }" (change)="onFileChange($event)" required />
+	                                    <div *ngIf="f.submitted && cimage.invalid" class="invalid-feedback">
+	                                        <div *ngIf="cimage.errors.required">Cover image is required</div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div> -->
+	                        <div class="form-group">
+	                            <div class="col-xs-12">
+	                                <div class="input-group">
+	                                    <label for="donate">Is book donated?</label>
+	                                    <select placeholder="Donated" name="donate" class="form-control input-lg" [(ngModel)]="model.donate" #donate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && donate.invalid }" required>
+									     	<option value="yes">Yes</option>
+									     	<option value="no">No</option>
+									    </select>
+	                                    <div *ngIf="f.submitted && donate.invalid" class="invalid-feedback">
+	                                        <div *ngIf="donate.errors.required">Please select one option</div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="form-group form-actions">
+	                            <div class="col-xs-6 text-right reg-btn">
+	                                <button type="submit" class="btn btn-sm btn-primary reg-btn" [disabled]="!f.dirty"><i class="fa fa-plus"></i> Edit Details</button>
+	                            </div>
+	                        </div>
+	                    </form>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+	</div>
+   	<div id="content">
+    	<router-outlet></router-outlet>
+  	</div>
+</div>

@@ -1,0 +1,54 @@
+<div id="admin-nav-container">
+	<nav class="main_nav">
+		<div class="container" style="max-width:95%;">
+			<div class="row">
+				<div class="col">
+					
+					<div class="main_nav_content d-flex flex-row">
+
+						<!-- Categories Menu -->
+
+						<div class="cat_menu_container">
+							<div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
+								<div class="cat_burger"><span></span><span></span><span></span></div>
+								<div class="cat_menu_text">Menu</div>
+							</div>
+
+							<ul class="cat_menu">
+								<li><a routerLink="/admin/add-admin" routerLinkActive="active">Add new admin <i class="fas fa-chevron-right ml-auto"></i></a></li>
+								<li><a routerLink="/admin/add-book" routerLinkActive="active">Add new book<i class="fas fa-chevron-right"></i></a></li>
+								<li><a routerLink="/admin/add-category" routerLinkActive="active">Add new category<i class="fas fa-chevron-right"></i></a></li>
+								<!-- <li><a routerLink="/admin/edit-book" routerLinkActive="active">Edit book details<i class="fas fa-chevron-right"></i></a></li> -->
+								<li><a routerLink="/admin/manage-books" routerLinkActive="active">Manage books<i class="fas fa-chevron-right"></i></a></li>
+								<li><a routerLink="/admin/requested-books" routerLinkActive="active">Requested books<i class="fas fa-chevron-right"></i></a></li>
+								<li><a routerLink="/admin/contact-messages" routerLinkActive="active">Messages<i class="fas fa-chevron-right"></i></a></li>
+								<!-- <li><a routerLink="/admin/view-stats" routerLinkActive="active">View stats<i class="fas fa-chevron-right"></i></a></li> -->
+							</ul>
+						</div>
+
+						<!-- Main Nav Menu -->
+
+						<div class="main_nav_menu ml-auto">
+							<ul class="standard_dropdown main_nav_dropdown">
+								<li><a routerLink="/admin" routerLinkActive="active">Home<i class="fas fa-chevron-down"></i></a></li>
+								<!-- <li><a routerLink="/admin" routerLinkActive="active">Admin<i class="fas fa-chevron-down"></i></a></li> -->
+								<li class="hassubs" *ngIf="cookieService.check('mysite_username')">
+									<a href="#">Options<i class="fa fa-chevron-down"></i></a>
+									<ul>
+										<!-- <li><a href="#">View Orders<i class="fas fa-chevron-down"></i></a></li> -->
+										<li><a routerLink="/admin/reset-password" routerLinkActive="active">Reset Password<i class="fa fa-chevron-down"></i></a></li>
+										<li><a (click)="onLogout()" style="cursor: pointer;">Sign out<i class="fas fa-chevron-down"></i></a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+						<!-- Menu Trigger -->
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+</div>

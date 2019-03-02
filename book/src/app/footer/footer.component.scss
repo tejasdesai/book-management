@@ -1,0 +1,30 @@
+.footer-heading {
+    color: #ffffff;
+    font-size: 19px;
+    margin: 29px 0 15px;
+}
+
+.footer-nav a {
+    color: #777777;
+    -webkit-transition: all ease-out 0.15s;
+    transition: all ease-out 0.15s;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+    text-decoration: none;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100px;
+    width: 100%;
+    color: #656565;
+    padding-bottom: 15px;
+    background-color: #252525;
+    text-align: center;
+    z-index: 500;
+}

@@ -1,0 +1,18 @@
+<div class="user-main-container" *ngIf="View == 'home'">
+  <app-topbar></app-topbar>
+  <app-main-nav *ngIf="mainNavIndicator"></app-main-nav>
+  <app-slider *ngIf="showComponent"></app-slider>
+  <app-show-books *ngIf="showComponent"></app-show-books>
+
+  <div id="content" class="content">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer> </app-footer>
+</div>
+
+<div id="admin-main-container" *ngIf="View == 'admin'">
+  
+  <div id="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

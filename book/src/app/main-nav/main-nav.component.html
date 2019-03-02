@@ -1,0 +1,50 @@
+<div id="main-nav-container">
+	<nav class="main_nav">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					
+					<div class="main_nav_content d-flex flex-row">
+
+						<!-- Categories Menu -->
+
+						<div class="cat_menu_container">
+							<div class="cat_menu_title d-flex flex-row align-items-center justify-content-start" (mouseover)="showcats()" (mouseout)="hidecats()">
+								<div class="cat_burger"><span></span><span></span><span></span></div>
+								<div class="cat_menu_text">categories</div>
+							</div>
+
+							<ul class="cat_menu" id="cat_menu_ul" (mouseover)="showcats()" (mouseout)="hidecats()">
+								<li *ngFor="let x of categories" (click)="selectCategory(x, $event)" id={{x}}><a> {{x}} <i class="fas fa-chevron-right ml-auto"></i></a></li>
+							</ul>
+						</div>
+
+						<!-- Main Nav Menu -->
+
+						<div class="main_nav_menu ml-auto">
+							<ul class="standard_dropdown main_nav_dropdown">
+								<li><a href="#">Home<i class="fa fa-chevron-down"></i></a></li>
+								<li><a routerLink="/about" routerLinkActive="active">About Us<i class="fa fa-chevron-down"></i></a></li>
+								<li><a routerLink="/contact" routerLinkActive="active">Contact Us<i class="fa fa-chevron-down"></i></a></li>
+								<li class="hassubs" *ngIf="cookieService.check('mysite_username')">
+									<a href="#">Options<i class="fa fa-chevron-down"></i></a>
+									<ul>
+										<!-- <li><a href="#">View Orders<i class="fas fa-chevron-down"></i></a></li> -->
+										<li><a routerLink="/donate-book" routerLinkActive="active">Donate Book<i class="fa fa-chevron-down"></i></a></li>
+										<li><a routerLink="/request-book" routerLinkActive="active">Request Book<i class="fa fa-chevron-down"></i></a></li>
+										<li><a routerLink="/orders" routerLinkActive="active">View Orders<i class="fa fa-chevron-down"></i></a></li>
+										<li><a routerLink="/reset-password" routerLinkActive="active">Reset Password<i class="fa fa-chevron-down"></i></a></li>
+										<li><a (click)="onLogout()" style="cursor: pointer;">Sign out<i class="fa fa-chevron-down"></i></a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+						<!-- Menu Trigger -->
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+</div>

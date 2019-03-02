@@ -1,0 +1,98 @@
+<div class="contact-main-container">
+	<div class="contact_info">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1">
+					<div class="contact_info_container d-flex flex-lg-row flex-column justify-content-between align-items-between">
+
+						<!-- Contact Item -->
+						<div class="contact_info_item d-flex flex-row align-items-center justify-content-start">
+							<div class="contact_info_image"><img src="assets/images/contact_1.png" alt=""></div>
+							<div class="contact_info_content">
+								<div class="contact_info_title">Phone</div>
+								<div class="contact_info_text">+1-660-238-2283</div>
+							</div>
+						</div>
+
+						<!-- Contact Item -->
+						<div class="contact_info_item d-flex flex-row align-items-center justify-content-start">
+							<div class="contact_info_image"><img src="assets/images/contact_2.png" alt=""></div>
+							<div class="contact_info_content">
+								<div class="contact_info_title">Email</div>
+								<div class="contact_info_text">turnthepage.care@gmail.com</div>
+							</div>
+						</div>
+
+						<!-- Contact Item -->
+						<div class="contact_info_item d-flex flex-row align-items-center justify-content-start">
+							<div class="contact_info_image"><img src="assets/images/contact_3.png" alt=""></div>
+							<div class="contact_info_content">
+								<div class="contact_info_title">Address</div>
+								<div class="contact_info_text">509, Anderson Street, MO, USA, 64093</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Contact Form -->
+
+	<div class="contact_form">
+		<div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                	<div class="contact_form_container">
+						<div class="contact_form_title">Get in Touch</div>
+						<form method="post" id="contact-form" class="form-horizontal" name="form" (ngSubmit)="onSubmit(f)" #f="ngForm" novalidate>
+							<div class="form-group">
+	                            <div class="col-xs-4">
+	                                <div class="input-group">
+	                                    <input type="text" id="contact-name" name="contactname" class="form-control input-lg input_field" [(ngModel)]="model.contactname" #contactname="ngModel" [ngClass]="{ 'is-invalid': f.submitted && contactname.invalid }" required placeholder="Name (required)"/>
+	                                    <div *ngIf="f.submitted && contactname.invalid" class="invalid-feedback">
+	                                        <div *ngIf="contactname.errors.required">Please enter your name</div>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="col-xs-4">
+	                                <div class="input-group">
+	                                    <input type="email" id="contact-email" name="contactemail" class="form-control input-lg input_field" [(ngModel)]="model.contactemail" #contactemail="ngModel" [ngClass]="{ 'is-invalid': f.submitted && contactemail.invalid }" required email placeholder="Email (required)" />
+	                                    <div *ngIf="f.submitted && contactemail.invalid" class="invalid-feedback">
+	                                        <div *ngIf="contactemail.errors.required">Please enter your email</div>
+	                                        <div *ngIf="contactemail.errors.email">Please enter a valid email address</div>
+										</div>
+	                                </div>
+	                            </div>
+	                            <div class="col-xs-4">
+	                                <div class="input-group">
+	                                	<input type="text" id="contact-phone" name="contactphone" class="form-control input-lg input_field" placeholder="Contact number (optional)">
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="form-group">
+	                            <div class="col-xs-12">
+	                                <div class="input-group">
+	                                    <textarea  id="contact-message" name="contactmessage" class="form-control input-lg input_field" [(ngModel)]="model.contactmessage" #contactmessage="ngModel" [ngClass]="{ 'is-invalid': f.submitted && contactmessage.invalid }" rows="4" required placeholder="Message (required)" ></textarea>
+	                                    <div *ngIf="f.submitted && contactmessage.invalid" class="invalid-feedback">
+	                                        <div *ngIf="contactmessage.errors.required">Please, write us a message.</div>
+										</div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                       	<div class="form-group form-actions">
+	                            <div class="col-xs-6 text-left">
+	                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Send Message</button>
+	                            </div>
+	                            <div class="col-xs-6 text-left">
+	                                <button type="reset" id="reset-btn" style="display: none" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Reset</button>
+	                            </div>
+	                        </div>
+						</form>
+					</div>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>

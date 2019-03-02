@@ -1,0 +1,36 @@
+<div class="col-md-8 col-lg-9">
+    <div class="row">
+        <!-- Images -->
+            <a href="img/placeholders/photos/photo31.jpg" class="gallery-link"><img src="img/placeholders/photos/photo31.jpg" alt="" class="img-responsive push-bit"></a>
+        <!-- END Images -->
+
+        <!-- Info -->
+        <div class="col-sm-6 push-bit">
+            <div class="clearfix">
+                <div class="pull-right">
+                    <span class="h2"><strong>$ 69</strong></span>
+                </div>
+                <span class="h4"><strong class="text-success">IN STOCK</strong><br><small>15 Available</small></span>
+            </div>
+            <form action="ecom_shopping_cart.html" method="post" class="form-inline push-bit text-right">
+                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                <button type="submit" class="btn btn-primary">Checkout</button>
+            </form>
+        </div>
+        <!-- END Info -->
+    </div>
+</div>
+
+
+<div class="col-sm-6 push-bit">
+                        <div class="clearfix">
+                            <div class="pull-right">
+                                <span class="h2"><strong>$ 69</strong></span>
+                            </div>
+                            <span class="h4"><strong class="text-success">IN STOCK</strong><br><small>15 Available</small></span>
+                        </div>
+                        <form action="ecom_shopping_cart.html" method="post" class="form-inline push-bit text-right">
+                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            <button type="submit" class="btn btn-primary">Checkout</button>
+                        </form>
+                    </div>

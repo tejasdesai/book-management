@@ -1,0 +1,27 @@
+<div class="books_container">
+    <div class="input-group mb-3 searchbook">
+        <input type="text" class="form-control" id="search-book" placeholder="Search by Title, Author or ISBN">
+        <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2" (click)="searchbook()"><img src="assets/images/search.png"></span>
+        </div>
+    </div>
+    <div class="container scrolling-wrapper-flexbox">
+        <div *ngFor="let x of books" class="col-md-4 visibility-none" data-toggle="animation-appear" data-animation-class="animation-fadeInQuick" data-element-offset="-100" id={{x.book_id}}>
+            <div class="store-item">
+                <div class="store-item-image">
+                    <a routerLink="/book-detail" [queryParams]="{id:x.book_id}" routerLinkActive="active">
+                        <img src={{baseUrl+x.cover_image_path}} alt="" class="img-responsive">
+                    </a>
+                </div>
+                <div class="store-item-info clearfix">
+                    <span class="store-item-price themed-color-dark pull-right">$ {{x.cost}}</span>
+                    <a routerLink="/book-detail" [queryParams]="{id:x.book_id}" routerLinkActive="active"><strong>{{x.title}}</strong></a><br>
+                    <small><i class="fa fa-shopping-cart text-muted"></i> <a href="javascript:void(0)" (click)="addtocart(x.book_id)" class="text-muted">Add to cart</a></small>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="books.length == 0" class="nobook">
+            <h3> No book is available for selected category.</h3>
+        </div>
+    </div>
+</div>
