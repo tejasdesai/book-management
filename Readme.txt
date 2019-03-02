@@ -98,7 +98,7 @@ Step 5: Setting up Node.js server for sending emails
 
 
 
-I hope everything works perfect after following all these steps. If you face any issue, please email me at txd92840@ucmo.edu
+I hope everything works perfect after following all these steps. If you face any issue, please email me at tdesai1511@gmail.com
 
 
 
